@@ -36,6 +36,9 @@ def get(unstructured_data):
     for pattern_type in pattern_types:
         reliability = pattern_type.reliability
 
+        if reliability is None:
+            continue
+
         # If the variance reliability is higher than the current, set as best
         if reliability > best_pattern_reliability:
             best_pattern_reliability = reliability
