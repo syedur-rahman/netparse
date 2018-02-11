@@ -138,11 +138,11 @@ class ParseTable:
             json_structure = {}
 
             # Skip any headers that do not have a row header
-            if line_num not in self.row_data:
+            if (line_num+1) not in self.row_data:
                 continue
 
             # Define row header
-            row_header = self.row_data[line_num]
+            row_header = self.row_data[line_num+1]
 
             # Start iteration of the value set from the TABLE PATTERN
             for i, (c_header, c_header_data) in enumerate(self.pattern.value_set.items()):
